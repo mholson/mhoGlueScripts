@@ -489,4 +489,3 @@ with open(f"{orgPath}/{orgSchema}-{tagID}.org", "a") as the_file:
     the_file.write(rf"* References" "\n")
     the_file.write("\n")
 
-subprocess.run(["git", "commit", "-a", rf"{orgPath}/{orgSchema}-{tagID}.org"])
