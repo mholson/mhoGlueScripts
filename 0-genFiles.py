@@ -107,36 +107,47 @@ if fileClassOption == 0:
 elif fileClassOption == 1:
     fileClass = "definition"
     noteEnvironment = "definition"
+    orgTag = ":defn:"
 elif fileClassOption == 2:
     fileClass = "example"
     noteEnvironment = "example"
+    orgTag = ":soln:"
 elif fileClassOption == 3:
     fileClass = "proposition"
     noteEnvironment = "proposition"
+    orgTag = ":prop:"
 elif fileClassOption == 4:
     fileClass = "notation"
     noteEnvironment = "notation"
+    orgTag = ":notn:"
 elif fileClassOption == 5:
     fileClass = "theorem"
     noteEnvironment = "theorem"
+    orgTag = ":thrm:"
 elif fileClassOption == 6:
     fileClass = "axiom"
     noteEnvironment = "axiom"
+    orgTag = ":axim:"
 elif fileClassOption == 7:
     fileClass = "algorithm"
     noteEnvironment = "algo"
+    orgTag = ":algo:"
 elif fileClassOption == 8:
     fileClass = "law"
     noteEnvironment = "alaw"
+    orgTag = ":laws:"
 elif fileClassOption == 9:
     fileClass = "rule"
     noteEnvironment = "arule"
+    orgTag = ":algo:"
 elif fileClassOption == 10:
     fileClass = "objective"
     noteEnvironment = "objective"
+    orgTag = ":objv:"
 elif fileClassOption == 11:
     fileClass = "property"
     noteEnvironment = "property"
+    orgTag = ":prpt:"
 else:
     pass
 print(f"===> tagID: {tagID}\n")
@@ -443,8 +454,11 @@ with open(f"{orgPath}/{orgSchema}-{tagID}.org", "a") as the_file:
     the_file.write(fr":ROAM_ALIASES: {orgSchema}-{tagID}" "\n")
     the_file.write(fr":END:" "\n")
     the_file.write(fr"#+TITLE: {orgTitle}" "\n")
+    the_file.write(fr"#+filetags: {orgTag}" "\n")
     the_file.write(fr"#+DATE: {orgTimeStamp}" "\n")
     the_file.write("\n")
+    the_file.write(
+        rf"[[~/Documents/assets/orgRoamGardenPNGs/tex.slide.{tagID}.png]]" "\n")
     the_file.write(r"* TeX Files" "\n")
     the_file.write(r"** TeX Core" "\n")
     the_file.write(r"*** English" "\n")
